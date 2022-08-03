@@ -1,0 +1,19 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+<div >
+    <h1>CREATE NEW PAGE</h1>
+    Click<b><a href="https://help.github.com/en/github/writing-on-github/basic-writing-and-formatting-syntax"> HERE </a></b>to learn how to write in markdown languge
+</div>
+
+   <form name="wiki" action="{% url 'newpage' %}" method="POST">
+    {%csrf_token%}
+    {{form}}
+    <input class="submit" type="submit">
+   </form>
+
+{% endblock %}

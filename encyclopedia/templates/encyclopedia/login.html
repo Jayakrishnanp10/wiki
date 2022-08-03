@@ -1,0 +1,17 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+    <h1>Login </h1>
+    <form method="POST" action="login">
+        {%csrf_token%}
+        <input type="text" name="username" placeholder="username">
+        <input type="text" name="password" placeholder="password">
+        <input type="submit">
+    </form>
+    <h6 style="color: red;">{{message}}</h6>
+    if don't have an account <a href="{%url 'signup' %}">signup</a>
+{% endblock %}
